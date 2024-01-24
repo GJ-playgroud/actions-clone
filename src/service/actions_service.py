@@ -13,6 +13,7 @@ class ActionsService:
 
     def deploy(self, org, dest, dest_type):
         destinations = self.actions_mgr.list_destinations(org, dest, dest_type)
+        print('destinations >> ', destinations)
         with concurrent.futures.ThreadPoolExecutor() as executor:
             futures = [executor.submit(self._commit, destination) for destination in destinations]
             concurrent.futures.wait(futures)
