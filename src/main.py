@@ -10,7 +10,10 @@ def main():
     dest_type = ARGS.type
     org = ARGS.org
     dest = ARGS.dest
-    print('args >> ', dest_type, org, dest)
+    print('org >> ', org)
+    print('dest_type >> ', dest_type)
+    print('dest >> ', dest)
+
 
     actions_srv.deploy(org=org, dest=dest, dest_type=dest_type)
 

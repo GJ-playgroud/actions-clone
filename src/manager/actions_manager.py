@@ -14,7 +14,7 @@ class ActionsManager:
             topics = dest.split("/")
             keyword = self._make_keyword(topics, org)
             repositories = self.github_mgr.search_repo(org, keyword)
-            console.log('repositories >> ', repositories)
+            print('repositories >> ', repositories)
             return [repository.full_name for repository in repositories]
 
     @staticmethod
